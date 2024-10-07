@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Bento grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+    
+    
+    .grid1{grid-area: post;}
+    .grid2{grid-area: social;}
+    .grid3{grid-area: schedule;}
+    .grid4{grid-area: write;}
+    .grid5{grid-area: manage;}
+    .grid6{grid-area: maintain;}
+    .grid7{grid-area: faster;}
+    .grid8{grid-area: followers;}
+
+    .gridContainer
+    {
+      display: grid;
+      grid-template-areas: 
+      'post social social social social schedule'
+      'post  manage manage maintain maintain schedule'
+      'write manage manage maintain maintain schedule'
+      'write faster faster followers followers followers';
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-rows: repeat(1, 250px);
+      gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+      
+    }
+      .gridContainer > div {
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+    .grid1
+    {
+      display: block;
+      position: relative;
+      align-items: left;
+      align-content: center;
+      background-color: hsl(31, 66%, 93%);
+      height: 420px;
+       
+    }
+    .grid2
+    {
+      background-color: hsl(256, 67%, 59%);
+      height: 250px
+      
+    }
+    .grid3
+    {
+      /* display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%; */
+      width: 220px;
+      overflow: hidden;
+      position: relative;
+      background-color: hsl(254, 88%, 90%);
+      height: 580px;
+
+    }
+    .grid4
+    {
+      background-color: hsl(39, 100%, 71%);
+      height: 410px;
+    }
+
+   .grid6
+    {
+      background-color: hsl(39, 100%, 71%);
+      overflow: hidden;
+      position: relative;
+      width: 400px;
+      height: 320px;
+    }
+
+    .grid5
+    {
+      overflow: hidden;
+      position: relative;
+      background-color: hsl(0, 0%, 100%);
+      width: 400px;
+      height: 320px;
+    }
+
+     .grid7
+    {
+      background-color: hsl(0, 0%, 100%);
+    }
+  .grid8 
+    {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(256, 67%, 59%);
+      height: 250px;
+  
+    }
+
+    .grid1-head
+    {
+      
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 200;
+      font-style: normal;
+      font-size: 35px;
+      text-align: left;
+      width: 180px;
+      padding: 20px;
+    }
+    .grid1-img
+    {
+      width: 150px;
+    }
+
+    .grid2-head
+    {
+      
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 55px;
+      text-align: center;
+      margin: 10px;
+      top: 0px;
+      padding: 0px 50px 0px 50px;
+      color: white;
+    }
+
+    .grid2-img
+    {
+      width: 200px;
+    }
+
+    .grid2-p
+    {
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 100;
+      font-style: normal;
+      font-size: 25px;
+      text-align: center;
+      margin: 0px;
+      padding: 0px 150px 0px 150px;
+      color: white;;
+    }
+
+    span
+    {
+      color:hsl(39, 100%, 71%);;
+    }
+
+    .grid4
+    {
+      background-color: hsl(39, 100%, 71%);
+      height: 410px;
+    }
+
+    .grid4-img
+    {
+      width: 180px;
+    }
+
+    .grid4-head
+    {
+      
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 35px;
+      text-align: left;
+      width: 180px;
+      padding: 15px 20px 15px 20px;
+      margin: 0px;
+      line-height: 35px;
+    }
+
+    .grid3-head
+    {
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 25px;
+      text-align: left;
+      width: 180px;
+      padding: 15px 20px 15px 20px;
+      margin: 0px;
+      line-height: 25px;
+    }
+
+    .grid3-img
+    {
+      /* display: block;
+      margin-left: auto;
+      width: 300px;
+      clip-path: inset(0 40% 0 0);  */
+      position: absolute;
+      right: -150px;
+      width: 350px;
+
+    }
+
+    .grid3-p
+    {
+      position: absolute;
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 20px;
+      float: left;
+      bottom: 10px;
+      left: 30px;
+    }
+
+    .grid3
+    {
+      /* display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%; */
+      width: 220px;
+      overflow: hidden;
+      position: relative;
+      background-color: hsl(254, 88%, 90%);
+      height: 580px;
+
+    }
+
+        .grid5-img
+    {
+      position: absolute;
+      float: right;
+      width: 450px;
+      right: -140px;
+      padding: 20px;
+    }
+    .grid5-head
+    {
+      position: absolute;
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 30px;
+      float: left;
+      width: 200px;
+      left: 30px;
+      bottom: -10px;
+    }
+
+    .grid6-head
+    {
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 30px;
+      padding: 20px;
+      width: 200px;
+      margin: 0px;
+    }
+    .grid6-img
+    {
+      width: 300px;
+    }
+
+    .grid7-img
+    {
+      width: 200px;
+      margin: 0px;
+    }
+
+    .grid7-head
+    {
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 80px;
+      margin: 0px;
+      padding: 0px 40px 0px 40px;
+    }
+    .grid7-p
+    {
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 20px;
+      margin: 0px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .grid8-img
+    {
+      position: absolute;
+      margin: 30px;
+      width: 250px;
+    }
+
+    .grid8-head
+    {
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 38px;
+      margin: 0px;
+      padding: 0px 0px 0px 270px;
+      width: 270px;
+      color: white;
+
+    }
+
+    .quick
+    {
+      color: hsl(256, 67%, 59%);
+
+    }
+
+    @media screen and (max-width: 768px) {
+  .gridContainer {
+    grid-template-areas: 
+    'social'
+    'manage'
+    'maintain'
+    'schedule'
+    'followers'
+    'faster'
+    'post'
+    'write'
+
+
+    
+
+;
+    grid-template-columns: 1fr; /* Makes it one column */
+    grid-template-rows: auto; /* Auto adjusts the row heights */
+  }
+
+  .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8 {
+    grid-column: 1 / -1; /* Ensures each item takes up the full width */
+  }
+
+  .grid5
+  {
+    width: 100%;
+    display: flex;
+    align-content: center;
+  }
+  .grid5-img
+  {
+    display: flex;
+    position: absolute;
+      float: none;
+      width: 80%;
+      right: 50px;
+      padding: 20px;
+  }
+
+  .grid5-head
+    {
+      position: absolute;
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 55px;
+      float: left;
+      width:100%;
+      left: 30px;
+      bottom: -40px;
+    }
+    .grid6
+    {
+      width: 100%;
+    }
+
+    .grid6-head
+    {
+      width: 80%;
+      font-size: 50px;
+    }
+
+    .grid6-img
+    {
+      width: 420px;
+      position: absolute;
+      float: left;
+      left: 20px;
+    }
+    .grid3
+    {
+      display: block;
+      position: relative;
+      align-items: center;
+      align-content: center;
+      width: 100%;
+      overflow: hidden;
+      background-color: hsl(254, 88%, 90%);
+      height: auto;
+    }
+
+    .grid3-head
+    {
+      position: relative;
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 45px;
+      text-align: center;
+      width: 100%;
+      padding: 50px 0px;
+      margin: auto;
+      line-height: 0px;
+    }
+
+    .grid3-img
+    {
+      clear: both;
+      margin: 0px;
+      width: 300px;
+      position: relative;
+      right: 100px;
+      width: 450px;
+      padding: 30px;
+
+    }
+
+    .grid3-p
+    {
+      position: relative;
+      font-family: "DM Sans",sans-serif;
+      text-align: center;
+      font-weight: 400;
+      font-size: 20px;
+      float: left;
+      bottom: 10px;
+      padding: 30px;
+      left: 0px;
+    }
+
+  .grid8 
+    {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(256, 67%, 59%);
+      height: 480px;
+  
+    }
+
+    .grid8-img
+    {
+      position: relative;
+      top: -100px;
+      left: 30px;
+    }
+
+    .grid8-head
+    {
+      position: absolute;
+      left: 0px;
+      top: 280px;
+      font-family: "DM Sans",sans-serif;
+      text-align: center;
+      font-weight: 400;
+      font-size: 38px;
+      margin: 0px auto;
+      padding: 0px 0px 0px 180px;
+      width: 270px;
+      color: white;
+
+    }
+
+    .grid7-img
+    {
+      width: 200px;
+      margin: 20px;
+      float: left;
+    }
+
+    .grid7-head
+    {
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 80px;
+      margin: 0px;
+      padding: 0px 40px 0px 20px;
+    }
+    .grid7-p
+    {
+      font-family: "DM Sans",sans-serif;
+      text-align: left;
+      font-weight: 400;
+      font-size: 20px;
+      margin: 0px;
+      padding: 20px;
+      text-align: left;
+    }
+
+
+    .grid1-head
+    {
+      
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 60px;
+      text-align: left;
+      width:100%;
+      padding: 20px;
+    }
+    .grid1-img
+    {
+      width: 250px;
+      float: left;
+      padding: 20px;
+    }
+
+    .grid4
+    {
+      background-color: hsl(39, 100%, 71%);
+      height: 440px;
+    }
+    
+    .grid4-img
+    {
+      width: 250px;
+      float: left;
+      padding: 20px;
+    }
+
+    .grid4-head
+    {
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 55px;
+      text-align: left;
+      width: 80%;
+      padding: 15px 20px 15px 20px;
+      margin: 0px;
+      line-height: 55px;
+    }
+
+
+
+
+}
+  </style>
+</head>
+<body>
+  <div class="gridContainer">
+  <div class="grid1">
+    <h1 class="grid1-head">Creat and schedule content <i class="quick">Quicker</i></h1>
+    <img class="grid1-img" src="assets/images/illustration-create-post.webp" alt="">
+  </div>
+  <div class="grid2">
+    <h1 class="grid2-head">Social Media <span>10x</span>  <i>Faster</i> with AI</h1>
+    <img class="grid2-img" src="assets/images/illustration-five-stars.webp" alt="">
+    <p class="grid2-p">Over 4,000 5-star reviews</p>
+  </div>
+  <div class="grid3">
+    <h1 class="grid3-head">Schedule to social media.</h1>
+    <img style="float: right;" class="grid3-img" src="assets/images/illustration-schedule-posts.webp" alt="">
+    <p class="grid3-p">Optimize post timings to publish content at the perfect time for your audience.</p>
+  </div>
+  <div class="grid4"> 
+    <h1 class="grid4-head">Write your content using AI.</h1>
+    <img class="grid4-img" src="assets/images/illustration-ai-content.webp" alt="">
+  </div>
+  <div class="grid5">
+    <img class="grid5-img" src="assets/images/illustration-multiple-platforms.webp" alt="">
+    <h3 class="grid5-head">Manage multiple accounts and platforms</h3>
+  </div>
+  <div class="grid6">
+    <h3 class="grid6-head">Maintain a consistent posting schedule.</h3>
+    <img class="grid6-img" src="assets/images/illustration-consistent-schedule.webp" alt="">
+  </div>
+  <div class="grid7">
+    <h1 class="grid7-head">>56%</h1>
+    <p class="grid7-p">faster audience growth</p>
+    <img class="grid7-img" src="assets/images/illustration-audience-growth.webp" alt="">
+
+  </div>
+  <div class="grid8">
+    <img class="grid8-img" src="assets/images/illustration-grow-followers.webp" alt="">
+    <h1 class="grid8-head">Grow followers with non-stop content.</h1>
+  </div>
+</div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
